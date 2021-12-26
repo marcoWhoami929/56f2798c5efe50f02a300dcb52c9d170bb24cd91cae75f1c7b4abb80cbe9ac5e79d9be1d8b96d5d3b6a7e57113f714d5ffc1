@@ -1,4 +1,4 @@
-# piaf-vue
+# FLIGHT TEST APP
 
 ## Project setup
 ```
