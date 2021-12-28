@@ -19,7 +19,8 @@
     "register-button": "REGISTER",
     "reset-password-button": "RESET",
     "buy": "BUY",
-    "username": "Username"
+    "username": "Username",
+    "reset-password": "RESET PASSWORD"
   },
   "menu": {
     "home": "Home",
@@ -164,7 +165,6 @@
     "pending-for-print": "Pending for print",
     "logs": "Logs",
     "piaf": "PIAF",
-    "magic-is-in-the-details": "MAGIC IS IN THE DETAILS",
     "yes-it-is-indeed": "Yes, it is indeed!",
     "advanced-search": "Advanced Search",
     "toppings": "Toppings",

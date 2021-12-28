@@ -377,12 +377,13 @@ hr {
 }
 
 .logo-single {
-  width: 110px;
-  height: 35px;
+  width: 170px;
+  height: 170px;
   background: url($logo-path) no-repeat;
   background-position: center center;
-  display: inline-block;
-  margin-bottom: 60px;
+  display: block;
+  margin:auto;
+  margin-bottom: 30px;
 }
 
 .list-item-heading {

@@ -3,19 +3,14 @@
     <b-colxx xxs="12" md="10" class="mx-auto my-auto">
         <b-card class="auth-card" no-body>
             <div class="position-relative image-side">
-                <p class="text-white h2">{{ $t('dashboards.magic-is-in-the-details') }}</p>
-                <p class="white mb-0">
-                    Please use your credentials to login.
-                    <br />If you are not a member, please
-                    <router-link tag="a" to="/user/register" class="white">register</router-link>.
-                </p>
+          
+                
             </div>
             <div class="form-side">
                 <router-link tag="a" to="/">
                     <span class="logo-single" />
                 </router-link>
-                <h6 class="mb-4">{{ $t('user.login-title')}}</h6>
-
+                  <h2 class="mb-4">{{ $t('user.login-title')}}</h2>
                 <b-form @submit.prevent="formSubmit" class="av-tooltip tooltip-label-bottom">
                     <b-form-group :label="$t('user.email')" class="has-float-label mb-4">
                         <b-form-input type="text" v-model="$v.form.email.$model" :state="!$v.form.email.$error" />
@@ -30,7 +25,7 @@
                         <b-form-invalid-feedback v-else-if="!$v.form.password.minLength || !$v.form.password.maxLength">Your password must be between 4 and 16 characters</b-form-invalid-feedback>
                     </b-form-group>
                     <div class="d-flex justify-content-between align-items-center">
-                        <router-link tag="a" to="/user/forgot-password">{{ $t('user.forgot-password-question')}}</router-link>
+                        
                         <b-button type="submit" variant="primary" size="lg" :disabled="processing" :class="{'btn-multiple-state btn-shadow': true,
                     'show-spinner': processing,
                     'show-success': !processing && loginError===false,
@@ -48,6 +43,14 @@
                             </span>
                             <span class="label">{{ $t('user.login-button') }}</span>
                         </b-button>
+                        <b-button variant="primary" size="lg" tag="a" to="/user/register">
+                           
+                            <span class="label">{{ $t('user.register-button') }}</span>
+                        </b-button>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center" style="margin-top:30px">
+                        <router-link tag="a" to="/user/forgot-password">{{ $t('user.forgot-password-question')}}</router-link>
+                       
                     </div>
                 </b-form>
             </div>
@@ -76,8 +79,8 @@ export default {
     data() {
         return {
             form: {
-                email: "piaf-vue@coloredstrategies.com",
-                password: "piaf123"
+                email: "test@flighttest.com",
+                password: "admin123"
             },
         };
     },
@@ -104,7 +107,7 @@ export default {
         formSubmit() {
             this.$v.$touch();
             this.form.email = "piaf-vue@coloredstrategies.com";
-            this.form.password = "piaf1234";
+            this.form.password = "piaf123";
             this.$v.form.$touch();
            // if (!this.$v.form.$anyError) {
                 this.login({

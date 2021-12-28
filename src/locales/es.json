@@ -16,10 +16,11 @@
     "forgot-password-question": "¿Contraseña olvidada?",
     "fullname": "Nombre completo",
     "login-button": "INICIAR SESIÓN",
-    "register-button": "REGISTRO",
+    "register-button": "REGISTRARME",
     "reset-password-button": "REINICIAR",
     "buy": "COMPRAR",
-    "username": "Nombre de Usuario"
+    "username": "Nombre de Usuario",
+    "reset-password": "Restablecer contraseña"
   },
   "menu": {
     "home": "Inicio",
@@ -164,7 +165,6 @@
     "pending-for-print": "Pendiente para imprimir",
     "logs": "Troncos",
     "gogo": "PIAF",
-    "magic-is-in-the-details": "LA MAGIA ESTA EN LOS DETALLES",
     "yes-it-is-indeed": "¡Si es verdad!",
     "advanced-search": "Búsqueda Avanzada",
     "toppings": "Coberturas",

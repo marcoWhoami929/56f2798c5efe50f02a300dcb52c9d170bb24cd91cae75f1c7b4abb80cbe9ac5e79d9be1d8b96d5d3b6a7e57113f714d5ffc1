@@ -3,18 +3,13 @@
     <b-colxx xxs="12" md="10" class="mx-auto my-auto">
       <b-card class="auth-card" no-body>
         <div class="position-relative image-side">
-          <p class="text-white h2">{{ $t('dashboards.magic-is-in-the-details') }}</p>
-          <p class="white mb-0">
-            Please use your credentials to login.
-            <br />If you are not a member, please
-            <router-link tag="a" to="/user/register" class="white">register</router-link>.
-          </p>
+          
         </div>
         <div class="form-side">
           <router-link tag="a" to="/">
             <span class="logo-single" />
           </router-link>
-          <h6 class="mb-4">{{ $t('user.login-title')}}</h6>
+          <h6 class="mb-4">{{ $t('user.reset-password')}}</h6>
 
           <b-form @submit.prevent="formSubmit" class="av-tooltip tooltip-label-bottom">
             <b-form-group :label="$t('user.password')" class="has-float-label mb-4">
