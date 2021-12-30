@@ -1,6 +1,6 @@
 {
   "general": {
-    "copyright": "Piaf Vue © Todos los derechos reservados."
+    "copyright": ""
   },
   "unauthorized": {
     "title": "Unauthorized Access Attempt",
@@ -12,7 +12,7 @@
     "forgot-password": "Se te olvidó tu contraseña",
     "email": "E-mail",
     "password": "Contraseña",
-    "password-again": "Contraseña Again",
+    "password-again": "Ingresar contraseña nuevamente",
     "forgot-password-question": "¿Contraseña olvidada?",
     "fullname": "Nombre completo",
     "login-button": "INICIAR SESIÓN",
@@ -25,7 +25,7 @@
   "menu": {
     "home": "Inicio",
     "app": "Inicio",
-    "dashboards": "Tableros",
+    "dashboards": "Tablero",
     "default": "Defecto",
     "analytics": "Analítica",
     "ecommerce": "Comercio electrónico",
@@ -129,7 +129,7 @@
     "sales": "Ventas",
     "orders": "Pedidos",
     "refunds": "Reembolso",
-    "recent-orders": "Pedidos Recientas",
+    "recent-orders": "Pedidos Recientes",
     "product-categories": "Categorías de Producto",
     "cakes": "Tortas",
     "tickets": "Entradas",

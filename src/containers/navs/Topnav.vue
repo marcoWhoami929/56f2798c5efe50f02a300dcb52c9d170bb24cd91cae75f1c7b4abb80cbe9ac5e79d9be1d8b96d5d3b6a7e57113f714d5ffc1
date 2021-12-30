@@ -49,6 +49,7 @@
         </b-dropdown>
       </div>
       <div class="position-relative d-none d-none d-lg-inline-block">
+      
         <a
           class="btn btn-outline-primary btn-sm ml-2"
           target="_top"
@@ -90,10 +91,7 @@
                 <i class="iconsminds-shop-4 d-block" />
                 {{$t('menu.dashboards')}}
               </router-link>
-              <router-link tag="a" :to="`${adminRoot}/ui`" class="icon-menu-item">
-                <i class="iconsminds-pantone d-block" />
-                {{$t('menu.ui')}}
-              </router-link>
+           
               <router-link tag="a" :to="`${adminRoot}/ui/components/charts`" class="icon-menu-item">
                 <i class="iconsminds-bar-chart-4 d-block" />
                 {{$t('menu.charts')}}

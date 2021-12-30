@@ -362,7 +362,7 @@
               <div class="row">
                 <div class="col-12"></div>
                 <div class="col-12 text-center">
-                  <p class="mb-0">2020 © ColoredStrategies</p>
+                  <p class="mb-0"></p>
                 </div>
               </div>
             </div>
