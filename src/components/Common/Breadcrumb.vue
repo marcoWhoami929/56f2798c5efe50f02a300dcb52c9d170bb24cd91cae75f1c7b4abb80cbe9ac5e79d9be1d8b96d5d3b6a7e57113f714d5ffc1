@@ -1,6 +1,6 @@
 <template>
   <span>
-    <h1 v-if="heading && heading.length>0">{{ heading }}</h1>
+    <h1 v-if="heading && heading.length>0"></h1>
     <b-nav class="pt-0 breadcrumb-container d-none d-sm-block d-lg-inline-block">
       <b-breadcrumb :items="items" />
     </b-nav>

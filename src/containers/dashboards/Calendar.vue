@@ -1,10 +1,10 @@
 <template>
   <b-card :title="$t('dashboards.calendar')">
     <calendar-view
-      style="min-height:500px"
+      style="min-height: 500px"
       :events="events"
       :show-date="showDate"
-      :time-format-options="{hour: 'numeric', minute:'2-digit'}"
+      :time-format-options="{ hour: 'numeric', minute: '2-digit' }"
       :enable-drag-drop="true"
       :show-event-times="true"
       display-period-uom="month"
@@ -27,13 +27,13 @@
 import {
   CalendarView,
   CalendarViewHeader,
-  CalendarMathMixin
+  CalendarMathMixin,
 } from "vue-simple-calendar";
 
 export default {
   components: {
     "calendar-view": CalendarView,
-    "calendar-view-header": CalendarViewHeader
+    "calendar-view-header": CalendarViewHeader,
   },
   mixins: [CalendarMathMixin],
   data() {
@@ -42,30 +42,12 @@ export default {
       events: [
         {
           id: "e2",
-          startDate: this.thisMonth(15),
-          title: "Meeting",
-          classes: "secondary"
+          startDate: this.thisMonth(1),
+          endDate: this.thisMonth(30),
+          title: "Inicio Curso",
+          classes: "secondary",
         },
-        {
-          id: "e3",
-          startDate: this.thisMonth(8, 9, 25),
-          endDate: this.thisMonth(9, 16, 30),
-          title: "Sales",
-          classes: "primary"
-        },
-        {
-          id: "e5",
-          startDate: this.thisMonth(5),
-          endDate: this.thisMonth(12),
-          title: "Tax Days",
-          classes: "secondary"
-        },
-        {
-          id: "e10",
-          startDate: this.thisMonth(27),
-          title: "My Birthday!"
-        }
-      ]
+      ],
     };
   },
   methods: {
@@ -87,7 +69,7 @@ export default {
       const eLength = this.dayDiff(event.startDate, date);
       event.originalEvent.startDate = this.addDays(event.startDate, eLength);
       event.originalEvent.endDate = this.addDays(event.endDate, eLength);
-    }
-  }
+    },
+  },
 };
 </script>

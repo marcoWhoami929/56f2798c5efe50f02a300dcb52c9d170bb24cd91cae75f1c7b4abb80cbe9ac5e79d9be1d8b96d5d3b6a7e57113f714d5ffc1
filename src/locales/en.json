@@ -25,8 +25,10 @@
   "menu": {
     "home": "Home",
     "app": "Home",
-    "dashboards": "Dashboards",
-    "default": "Default",
+    "dashboards": "Dashboard",
+    "lessons": "Lessons",
+    "default": "Dashboard Main",
+    "hellow": "Hellow",
     "analytics": "Analytics",
     "ecommerce": "Ecommerce",
     "content": "Content",
@@ -43,10 +45,11 @@
     "forgot-password": "Forgot Password",
     "reset-password": "Reset Password",
     "error": "Error",
-    "applications": "Applications",
-    "todo": "To-do List",
+    "tools": "Tools",
+    "todo": "My Notes",
+
     "library": "Library",
-    "survey": "Survey",
+    "survey": "Lessons",
     "chat": "Chat",
     "ui": "UI",
     "alerts": "Alerts",
@@ -102,6 +105,8 @@
     "product": "Product",
     "miscellaneous": "Miscellaneous",
     "portfolio": "Portfolio",
+    "detail-profile": "Detail Profile",
+    "my-profile": "My Profile",
     "social": "Social",
     "details-alt": "Details Alt",
     "components": "Components",
@@ -122,14 +127,20 @@
     "single": "Single"
   },
   "dashboards": {
-    "pending-orders": "Pending Orders",
-    "completed-orders": "Completed Orders",
-    "refund-requests": "Refund Requests",
-    "new-comments": "New Comments",
+    "tasks-pending": "Tasks Pending",
+    "tasks-completed": "Tasks Completed",
+    "new-tasks": "New Tasks",
+    "general-progress": "General Progress",
+    "payments-done": "Payments Done",
+    "courses-taken": "Courses Taken",
+    "courses-pending": "Courses Pending",
+    "courses-progress": "Courses In Progress",
     "sales": "Sales",
+    "progress": "My Progress",
     "orders": "Orders",
     "refunds": "Refunds",
-    "recent-orders": "Recent Orders",
+    "courses-categories": "Courses Categories",
+    "recent-courses": "Cursos Recientes",
     "product-categories": "Product Categories",
     "cakes": "Cakes",
     "tickets": "Tickets",
@@ -143,10 +154,7 @@
     "conversion-rates": "Conversion Rates",
     "per-session": "Per Session",
     "profile-status": "Profile Status",
-    "payment-status": "Payment Status",
     "work-progress": "Work Progress",
-    "tasks-completed": "Tasks Completed",
-    "payments-done": "Payments Done",
     "order-stock": "Order - Stock",
     "categories": "Categories",
     "quick-post": "Quick Post",
@@ -155,11 +163,11 @@
     "category": "Category",
     "save-and-publish": "Save and Publish",
     "top-viewed-posts": "Top Viewed Posts",
-    "posts": "Posts",
-    "pending-for-publish": "Pending for publish",
-    "users": "Users",
-    "on-approval-process": "On approval process",
-    "alerts": "Alerts",
+    "courses": "Courses",
+    "pending-for-start": "Pending For Start",
+    "on-process-of-finalizing": "On Process Of Finalizing",
+    "notifications": "Notifications",
+    "unread-alerts": "Unread Alerts",
     "waiting-for-notice": "Waiting for notice",
     "files": "Files",
     "pending-for-print": "Pending for print",
@@ -218,13 +226,13 @@
     "photos": "Photos",
     "who-to-follow": "Who to Follow",
     "follow": "FOLLOW",
-    "followers": "FOLLOWERS",
+    "students": "STUDENTS",
     "recent-posts": "Recent Posts",
     "profile": "PROFILE",
     "friends": "FRIENDS",
     "images": "IMAGES",
     "purchase": "PURCHASE",
-    "prices":{
+    "prices": {
       "developer": "DEVELOPER",
       "team": "TEAM",
       "enterprise": "ENTERPRISE",
@@ -233,8 +241,8 @@
       "245Support": "24/5 Support",
       "247Support": "24/7 Support",
       "useractionsauditlog": "User actions audit log",
-      "featurecomparison" : "Feature Comparison",
-      "pricecomparison" : "Price Comparison"
+      "featurecomparison": "Feature Comparison",
+      "pricecomparison": "Price Comparison"
     }
   },
   "chat": {
@@ -247,7 +255,7 @@
     "edit": "Edit",
     "add-new": "ADD NEW",
     "save": "SAVE",
-    "add-new-title": "Add New Survey",
+    "add-new-title": "Add New Lesson",
     "title": "Title",
     "category": "Category",
     "label": "Label",
@@ -257,10 +265,10 @@
     "another-action": "Another action",
     "display-options": "Display Options",
     "orderby": "Order By : ",
-    "all-surveys": "All Surveys",
-    "completed-surveys": "Completed Surveys",
+    "all-lessons": "All Lessons",
+    "completed-lessons": "Completed Lessons",
     "categories": "Categories",
-    "active-surveys": "Active Surveys",
+    "active-lessons": "Active Lessons",
     "labels": "Labels",
     "details": "DETAILS",
     "results": "RESULTS",
@@ -271,7 +279,7 @@
   },
   "todo": {
     "add-new": "ADD NEW",
-    "add-new-title": "Add New Todo",
+    "add-new-title": "Add New Note",
     "title": "Title",
     "detail": "Detail",
     "category": "Category",
@@ -284,8 +292,9 @@
     "display-options": "Display Options",
     "orderby": "Order By : ",
     "all-tasks": "All Tasks",
-    "pending-tasks": "Pending Tasks",
-    "completed-tasks": "Completed Tasks",
+    "all-notes": "All Notes",
+    "pending-notes": "Pending Notes",
+    "completed-notes": "Completed Notes",
     "categories": "Categories",
     "labels": "Labels"
   },
@@ -469,13 +478,10 @@
     "lastname": "Last name",
     "lastname-message": "Please enter your last name!",
 
-
     "password-confirm": "Confirm Password",
     "validation-bootstrap": "Bootstrap Validation",
     "validation-vuelidate": "Vuelidate Validation",
     "name": "Name"
-
-
   },
   "form-components": {
     "custom-inputs": "Custom Inputs",
@@ -508,8 +514,8 @@
     "type-a-cake": "Type a Cake",
     "start": "Start",
     "end": "End",
-    "month-view-only" :"Month View Only",
-    "year-and-month-view-only" :"Year and Month View Only"
+    "month-view-only": "Month View Only",
+    "year-and-month-view-only": "Year and Month View Only"
   },
   "icons": {
     "simplelineicons": "Simple Line Icons",
@@ -612,7 +618,7 @@
     "vue-pagination": "Pagination",
     "vue-scrollable": "Scrollable"
   },
-  "wizard":{
+  "wizard": {
     "step-name-1": "Step 1",
     "step-name-2": "Step 2",
     "step-name-3": "Step 3",

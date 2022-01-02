@@ -19,15 +19,21 @@
         <v-select :options="labels" v-model="newItem.label" />
       </b-form-group>
       <b-form-group :label="$t('survey.status')">
-        <b-form-radio-group stacked class="pt-2" :options="statuses" v-model="newItem.status" />
+        <b-form-radio-group
+          stacked
+          class="pt-2"
+          :options="statuses"
+          v-model="newItem.status"
+        />
       </b-form-group>
     </b-form>
     <template slot="modal-footer">
-      <b-button
-        variant="outline-secondary"
-        @click="hideModal('modalright')"
-      >{{ $t('survey.cancel') }}</b-button>
-      <b-button variant="primary" @click="addItem()" class="mr-1">{{ $t('survey.submit') }}</b-button>
+      <b-button variant="outline-secondary" @click="hideModal('modalright')">{{
+        $t("survey.cancel")
+      }}</b-button>
+      <b-button variant="primary" @click="addItem()" class="mr-1">{{
+        $t("survey.submit")
+      }}</b-button>
     </template>
   </b-modal>
 </template>
@@ -37,13 +43,13 @@ import "vue-select/dist/vue-select.css";
 import { mapMutations } from "vuex";
 
 export default {
-  components:{
+  components: {
     "v-select": vSelect,
   },
-  props: ["categories", "labels","statuses"],
+  props: ["categories", "labels", "statuses"],
   data() {
     return {
-      newItem: { title: "", category: "", detail: "", label: "", status: "" }
+      newItem: { title: "", category: "", detail: "", label: "", status: "" },
     };
   },
   methods: {
@@ -62,7 +68,7 @@ export default {
         date:
           date.getDay() + "." + date.getMonth() + 1 + "." + date.getFullYear(),
         labelColor: this.newItem.label.color,
-        questions: []
+        questions: [],
       });
 
       this.newItem = {
@@ -70,10 +76,10 @@ export default {
         category: "",
         detail: "",
         label: "",
-        status: ""
+        status: "",
       };
       this.hideModal("modalright");
-    }
-  }
+    },
+  },
 };
 </script>

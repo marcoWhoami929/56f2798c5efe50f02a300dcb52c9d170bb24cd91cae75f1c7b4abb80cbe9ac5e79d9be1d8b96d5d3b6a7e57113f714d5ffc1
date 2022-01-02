@@ -3,14 +3,15 @@
     <b-row class="app-row survey-app">
       <b-colxx xxs="12">
         <div class="mb-2">
-          <h1>{{ $t('menu.todo') }}</h1>
+          <h1>{{ $t("menu.todo") }}</h1>
           <div class="top-right-button-container">
             <b-button
               v-b-modal.modalright
               variant="primary"
               size="lg"
               class="top-right-button"
-            >{{ $t('todo.add-new') }}</b-button>
+              >{{ $t("todo.add-new") }}</b-button
+            >
             <b-button-group v-if="isLoad">
               <b-dropdown
                 split
@@ -27,22 +28,29 @@
                     class="custom-control-input"
                     type="checkbox"
                     :checked="isSelectedAll()"
-                    v-shortkey="{select: ['ctrl','a'], undo: ['ctrl','d']}"
+                    v-shortkey="{ select: ['ctrl', 'a'], undo: ['ctrl', 'd'] }"
                     @shortkey="keymap"
                   />
                   <span
                     :class="{
-                      'custom-control-label' :true,
-                      'indeterminate' : isAnyItemSelected()
+                      'custom-control-label': true,
+                      indeterminate: isAnyItemSelected(),
                     }"
-                  >&nbsp;</span>
+                    >&nbsp;</span
+                  >
                 </label>
-                <b-dropdown-item>{{$t('todo.action')}}</b-dropdown-item>
-                <b-dropdown-item>{{$t('todo.another-action')}}</b-dropdown-item>
+                <b-dropdown-item>{{ $t("todo.action") }}</b-dropdown-item>
+                <b-dropdown-item>{{
+                  $t("todo.another-action")
+                }}</b-dropdown-item>
               </b-dropdown>
             </b-button-group>
           </div>
-          <todo-add-new-modal :categories="categories" :labels="labels" :statuses="statuses"></todo-add-new-modal>
+          <todo-add-new-modal
+            :categories="categories"
+            :labels="labels"
+            :statuses="statuses"
+          ></todo-add-new-modal>
           <piaf-breadcrumb />
         </div>
         <div class="mb-2">
@@ -51,7 +59,7 @@
             class="pt-0 pl-0 d-inline-block d-md-none"
             v-b-toggle.displayOptions
           >
-            {{ $t('todo.display-options') }}
+            {{ $t("todo.display-options") }}
             <i class="simple-icon-arrow-down align-middle" />
           </b-button>
           <b-collapse id="displayOptions" class="d-md-block">
@@ -64,12 +72,15 @@
                 size="xs"
               >
                 <b-dropdown-item
-                  v-for="(order,index) in sortOptions"
+                  v-for="(order, index) in sortOptions"
                   :key="`order${index}`"
                   @click="changeOrderBy(order)"
-                >{{ order.label }}</b-dropdown-item>
+                  >{{ order.label }}</b-dropdown-item
+                >
               </b-dropdown>
-              <div class="search-sm d-inline-block float-md-left mr-1 align-top">
+              <div
+                class="search-sm d-inline-block float-md-left mr-1 align-top"
+              >
                 <b-input :placeholder="$t('menu.search')" v-model="search" />
               </div>
             </div>
@@ -78,7 +89,11 @@
         <div class="separator mb-5" />
 
         <b-row v-if="isLoad" key="itemList">
-          <b-colxx xxs="12" v-for="(item,index) in items" :key="`item${index}`">
+          <b-colxx
+            xxs="12"
+            v-for="(item, index) in items"
+            :key="`item${index}`"
+          >
             <todo-list-item
               :key="item.id"
               :data="item"
@@ -106,7 +121,12 @@
       </v-contextmenu-item>
     </v-contextmenu>
 
-    <todo-application-menu v-if="isLoad" :items="items" :categories="categories" :labels="labels"></todo-application-menu>
+    <todo-application-menu
+      v-if="isLoad"
+      :items="items"
+      :categories="categories"
+      :labels="labels"
+    ></todo-application-menu>
   </div>
 </template>
 
@@ -121,90 +141,86 @@ export default {
   components: {
     "todo-list-item": TodoListItem,
     "todo-application-menu": TodoApplicationMenu,
-    "todo-add-new-modal": TodoAddNewModal
+    "todo-add-new-modal": TodoAddNewModal,
   },
   data() {
     return {
       sort: {
         column: "title",
-        label: "Title"
+        label: "Nombre Curso",
       },
       sortOptions: [
         {
           column: "title",
-          label: "Title"
+          label: "Nombre Curso",
         },
         {
           column: "category",
-          label: "Category"
+          label: "Categoria",
         },
         {
           column: "label",
-          label: "Label"
+          label: "Etiqueta",
         },
         {
           column: "status",
-          label: "Status"
-        }
+          label: "Estatus",
+        },
       ],
       search: "",
       selectedItems: [],
       categories: [
         {
-          label: "Flexbox",
-          value: "Flexbox"
+          label: "Piloto Privado",
+          value: "Piloto Privado",
         },
         {
-          label: "Sass",
-          value: "Sass"
+          label: "Piloto Comercial",
+          value: "Piloto Comercial",
         },
         {
-          label: "Vue",
-          value: "Vue"
+          label: "Tripulante de Cabina",
+          value: "Tripulante",
         },
-        {
-          label: "React",
-          value: "React"
-        }
       ],
       labels: [
         {
-          label: "EDUCATION",
-          value: "EDUCATION",
-          color: "secondary"
+          label: "Pendientes Curso",
+          value: "Pendientes Curso",
+          color: "secondary",
         },
         {
-          label: "NEW FRAMEWORK",
-          value: "NEW FRAMEWORK",
-          color: "primary"
+          label: "Dudas Curso",
+          value: "Dudas Curso",
+          color: "primary",
         },
         {
-          label: "PERSONAL",
-          value: "PERSONAL",
-          color: "info"
-        }
+          label: "Notas Personales",
+          value: "Notas Personales",
+          color: "warning",
+        },
       ],
       statuses: [
         {
-          text: "PENDING",
-          value: "PENDING"
+          text: "Pendiente",
+          value: "Pendiente",
         },
         {
-          text: "COMPLETED",
-          value: "COMPLETED"
-        }
+          text: "Completada",
+          value: "Completada",
+        },
       ],
       newItem: {
         title: "",
         category: "",
         detail: "",
         label: "",
-        status: ""
-      }
+        status: "",
+      },
     };
   },
   computed: {
-    ...mapGetters(["isLoad", "items", "todoError"])
+    ...mapGetters(["isLoad", "items", "todoError"]),
   },
   methods: {
     ...mapActions(["getTodoItems"]),
@@ -229,7 +245,7 @@ export default {
           this.selectedItems = [];
         }
       } else {
-        this.selectedItems = this.items.map(x => x.id);
+        this.selectedItems = this.items.map((x) => x.id);
       }
     },
     keymap(event) {
@@ -264,13 +280,13 @@ export default {
           Math.max(start, end) + 1
         );
         this.selectedItems.push(
-          ...itemsForToggle.map(item => {
+          ...itemsForToggle.map((item) => {
             return item.id;
           })
         );
       } else {
         if (this.selectedItems.includes(itemId)) {
-          this.selectedItems = this.selectedItems.filter(x => x !== itemId);
+          this.selectedItems = this.selectedItems.filter((x) => x !== itemId);
         } else {
           this.selectedItems.push(itemId);
         }
@@ -298,7 +314,7 @@ export default {
         "context menu item clicked - Delete Items: ",
         this.selectedItems
       );
-    }
+    },
   },
 
   mounted() {
@@ -307,6 +323,6 @@ export default {
   },
   beforeDestroy() {
     document.body.classList.remove("right-menu");
-  }
+  },
 };
 </script>

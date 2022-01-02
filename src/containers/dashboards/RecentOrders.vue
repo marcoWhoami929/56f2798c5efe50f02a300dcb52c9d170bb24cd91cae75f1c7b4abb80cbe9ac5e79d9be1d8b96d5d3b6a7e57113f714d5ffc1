@@ -1,12 +1,12 @@
 <template>
-  <b-card :title="$t('dashboards.recent-orders')">
+  <b-card :title="$t('dashboards.recent-courses')">
     <b-refresh-button @click="refreshButtonClick" />
     <vue-perfect-scrollbar
       class="scroll dashboard-list-with-thumbs"
       :settings="{ suppressScrollX: true, wheelPropagation: false }"
     >
       <recent-order-item
-        v-for="(order,index) in products.slice(0,6)"
+        v-for="(order, index) in products.slice(0, 3)"
         :order="order"
         detail-path="#"
         :key="index"
@@ -20,17 +20,17 @@ import products from "../../data/products";
 
 export default {
   components: {
-    "recent-order-item": RecentOrderItem
+    "recent-order-item": RecentOrderItem,
   },
   data() {
     return {
-      products
+      products,
     };
   },
   methods: {
     refreshButtonClick() {
       console.log("refreshButtonClick");
-    }
-  }
+    },
+  },
 };
 </script>

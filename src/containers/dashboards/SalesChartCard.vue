@@ -1,5 +1,5 @@
 <template>
-  <b-card :title="$t('dashboards.sales')">
+  <b-card :title="$t('dashboards.progress')">
     <div class="dashboard-line-chart">
       <line-chart :data="lineChartData" shadow />
     </div>
@@ -11,17 +11,17 @@ import { lineChartData } from "../../data/charts";
 
 export default {
   components: {
-    "line-chart": LineChart
+    "line-chart": LineChart,
   },
   data() {
     return {
-      lineChartData
+      lineChartData,
     };
   },
   methods: {
     refreshButtonClick() {
       console.log("refreshButtonClick");
-    }
-  }
+    },
+  },
 };
 </script>

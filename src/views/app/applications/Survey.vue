@@ -3,14 +3,15 @@
     <b-row class="app-row survey-app">
       <b-colxx xxs="12">
         <div class="mb-2">
-          <h1>{{ $t('menu.survey') }}</h1>
+          <h1>{{ $t("menu.survey") }}</h1>
           <div class="top-right-button-container">
             <b-button
               v-b-modal.modalright
               variant="primary"
               size="lg"
               class="top-right-button"
-            >{{ $t('survey.add-new') }}</b-button>
+              >{{ $t("survey.add-new") }}</b-button
+            >
             <b-button-group v-if="isLoadSurveys">
               <b-dropdown
                 split
@@ -27,22 +28,29 @@
                     class="custom-control-input"
                     type="checkbox"
                     :checked="isSelectedAll()"
-                    v-shortkey="{select: ['ctrl','a'], undo: ['ctrl','d']}"
+                    v-shortkey="{ select: ['ctrl', 'a'], undo: ['ctrl', 'd'] }"
                     @shortkey="keymap"
                   />
                   <span
                     :class="{
-                      'custom-control-label' :true,
-                      'indeterminate' : isAnyItemSelected()
+                      'custom-control-label': true,
+                      indeterminate: isAnyItemSelected(),
                     }"
-                  >&nbsp;</span>
+                    >&nbsp;</span
+                  >
                 </label>
-                <b-dropdown-item>{{$t('survey.delete')}}</b-dropdown-item>
-                <b-dropdown-item>{{$t('survey.another-action')}}</b-dropdown-item>
+                <b-dropdown-item>{{ $t("survey.delete") }}</b-dropdown-item>
+                <b-dropdown-item>{{
+                  $t("survey.another-action")
+                }}</b-dropdown-item>
               </b-dropdown>
             </b-button-group>
           </div>
-            <survey-add-new-modal :categories="categories" :labels="labels" :statuses="statuses"></survey-add-new-modal>
+          <survey-add-new-modal
+            :categories="categories"
+            :labels="labels"
+            :statuses="statuses"
+          ></survey-add-new-modal>
           <piaf-breadcrumb />
         </div>
         <div class="mb-2">
@@ -51,7 +59,7 @@
             class="pt-0 pl-0 d-inline-block d-md-none"
             v-b-toggle.displayOptions
           >
-            {{ $t('survey.display-options') }}
+            {{ $t("survey.display-options") }}
             <i class="simple-icon-arrow-down align-middle" />
           </b-button>
           <b-collapse id="displayOptions" class="d-md-block">
@@ -64,12 +72,15 @@
                 size="xs"
               >
                 <b-dropdown-item
-                  v-for="(order,index) in sortOptions"
+                  v-for="(order, index) in sortOptions"
                   :key="`order${index}`"
                   @click="changeOrderBy(order)"
-                >{{ order.label }}</b-dropdown-item>
+                  >{{ order.label }}</b-dropdown-item
+                >
               </b-dropdown>
-              <div class="search-sm d-inline-block float-md-left mr-1 align-top">
+              <div
+                class="search-sm d-inline-block float-md-left mr-1 align-top"
+              >
                 <b-input :placeholder="$t('menu.search')" v-model="search" />
               </div>
             </div>
@@ -78,7 +89,11 @@
         <div class="separator mb-5" />
 
         <b-row v-if="isLoadSurveys" key="itemList">
-          <b-colxx xxs="12" v-for="(item,index) in surveyItems" :key="`item${index}`">
+          <b-colxx
+            xxs="12"
+            v-for="(item, index) in surveyItems"
+            :key="`item${index}`"
+          >
             <survey-list-item
               :key="item.id"
               :data="item"
@@ -125,79 +140,74 @@ export default {
   components: {
     "survey-list-item": SurveyListItem,
     "survey-add-new-modal": SurveyAddNewModal,
-    "survey-application-menu": SurveyApplicationMenu
+    "survey-application-menu": SurveyApplicationMenu,
   },
   data() {
     return {
       sort: {
         column: "title",
-        label: "Title"
+        label: "Nombre Curso",
       },
       sortOptions: [
         {
           column: "title",
-          label: "Title"
+          label: "Nombre Leccion",
         },
         {
           column: "category",
-          label: "Category"
+          label: "Categoria",
         },
         {
           column: "label",
-          label: "Label"
+          label: "Etiqueta",
         },
         {
           column: "status",
-          label: "Status"
-        }
+          label: "Estatus",
+        },
       ],
       search: "",
       selectedItems: [],
       categories: [
         {
-          label: "Development",
-          value: "Development"
+          label: "Piloto Privado",
+          value: "Piloto Privado",
         },
         {
-          label: "Workplace",
-          value: "Workplace"
+          label: "Piloto Comercial",
+          value: "Piloto Comercial",
         },
         {
-          label: "Hardware",
-          value: "Hardware"
-        }
+          label: "Tripulante de Cabina",
+          value: "Tripulante",
+        },
       ],
       labels: [
         {
-          label: "EDUCATION",
-          value: "EDUCATION",
-          color: "secondary"
+          label: "Leccion Pendiente",
+          value: "Leccion Pendiente",
+          color: "secondary",
         },
         {
-          label: "NEW FRAMEWORK",
-          value: "NEW FRAMEWORK",
-          color: "primary"
+          label: "Leccion Completada",
+          value: "Leccion Completada",
+          color: "primary",
         },
-        {
-          label: "PERSONAL",
-          value: "PERSONAL",
-          color: "info"
-        }
       ],
       statuses: [
         {
-          text: "ACTIVE",
-          value: "ACTIVE"
+          text: "Pendiente",
+          value: "Pendiente",
         },
         {
-          text: "COMPLETED",
-          value: "COMPLETED"
-        }
-      ]
+          text: "Completada",
+          value: "Completada",
+        },
+      ],
     };
   },
   computed: {
-    ...mapGetters(["isLoadSurveys", "surveyItems", "surveyError"])
+    ...mapGetters(["isLoadSurveys", "surveyItems", "surveyError"]),
   },
   methods: {
     ...mapActions(["getSurveyItems"]),
@@ -220,7 +230,7 @@ export default {
           this.selectedItems = [];
         }
       } else {
-        this.selectedItems = this.surveyItems.map(x => x.id);
+        this.selectedItems = this.surveyItems.map((x) => x.id);
       }
     },
     keymap(event) {
@@ -255,13 +265,13 @@ export default {
           Math.max(start, end) + 1
         );
         this.selectedItems.push(
-          ...itemsForToggle.map(item => {
+          ...itemsForToggle.map((item) => {
             return item.id;
           })
         );
       } else {
         if (this.selectedItems.includes(itemId)) {
-          this.selectedItems = this.selectedItems.filter(x => x !== itemId);
+          this.selectedItems = this.selectedItems.filter((x) => x !== itemId);
         } else {
           this.selectedItems.push(itemId);
         }
@@ -289,10 +299,10 @@ export default {
         "context menu item clicked - Delete Items: ",
         this.selectedItems
       );
-    }
+    },
   },
   mounted() {
     this.getSurveyItems();
-  }
+  },
 };
 </script>

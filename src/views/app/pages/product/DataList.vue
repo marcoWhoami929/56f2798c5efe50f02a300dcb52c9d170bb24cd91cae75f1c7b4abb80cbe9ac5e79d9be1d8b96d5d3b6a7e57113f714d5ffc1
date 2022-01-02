@@ -48,7 +48,7 @@ import ListPageListing from "../../../../containers/pages/ListPageListing";
 export default {
   components: {
     "list-page-heading": ListPageHeading,
-    "list-page-listing": ListPageListing
+    "list-page-listing": ListPageListing,
   },
   data() {
     return {
@@ -57,7 +57,7 @@ export default {
       displayMode: "list",
       sort: {
         column: "title",
-        label: "Product Name"
+        label: "Product Name",
       },
       page: 1,
       perPage: 4,
@@ -67,7 +67,7 @@ export default {
       total: 0,
       lastPage: 0,
       items: [],
-      selectedItems: []
+      selectedItems: [],
     };
   },
   methods: {
@@ -76,17 +76,17 @@ export default {
 
       axios
         .get(this.apiUrl)
-        .then(response => {
+        .then((response) => {
           return response.data;
         })
-        .then(res => {
+        .then((res) => {
           this.total = res.total;
           this.from = res.from;
           this.to = res.to;
-          this.items = res.data.map(x => {
+          this.items = res.data.map((x) => {
             return {
               ...x,
-              img: x.img.replace("/img/", "/img/products/")
+              img: x.img.replace("/img/", "/img/products/"),
             };
           });
           this.perPage = res.per_page;
@@ -115,7 +115,7 @@ export default {
       if (this.selectedItems.length >= this.items.length) {
         if (isToggle) this.selectedItems = [];
       } else {
-        this.selectedItems = this.items.map(x => x.id);
+        this.selectedItems = this.items.map((x) => x.id);
       }
     },
     keymap(event) {
@@ -150,13 +150,13 @@ export default {
           Math.max(start, end) + 1
         );
         this.selectedItems.push(
-          ...itemsForToggle.map(item => {
+          ...itemsForToggle.map((item) => {
             return item.id;
           })
         );
       } else {
         if (this.selectedItems.includes(itemId)) {
-          this.selectedItems = this.selectedItems.filter(x => x !== itemId);
+          this.selectedItems = this.selectedItems.filter((x) => x !== itemId);
         } else this.selectedItems.push(itemId);
       }
     },
@@ -173,7 +173,7 @@ export default {
     },
     changePage(pageNum) {
       this.page = pageNum;
-    }
+    },
   },
   computed: {
     isSelectedAll() {
@@ -187,7 +187,7 @@ export default {
     },
     apiUrl() {
       return `${this.apiBase}?sort=${this.sort.column}&page=${this.page}&per_page=${this.perPage}&search=${this.search}`;
-    }
+    },
   },
   watch: {
     search() {
@@ -195,10 +195,10 @@ export default {
     },
     apiUrl() {
       this.loadItems();
-    }
+    },
   },
   mounted() {
     this.loadItems();
-  }
+  },
 };
 </script>

@@ -13,7 +13,7 @@ const data = [
   },
   {
     img: "/assets/img/notifications/trofeo.jpg",
-    title: "Haz completado la leccion 1",
+    title: "Haz completado la leccion 3",
     date: "09.04.2018 - 12:45",
     id: 4,
   },

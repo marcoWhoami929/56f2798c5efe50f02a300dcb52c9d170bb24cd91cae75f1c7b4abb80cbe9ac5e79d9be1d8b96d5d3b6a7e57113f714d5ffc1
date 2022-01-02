@@ -1,18 +1,21 @@
 <template>
   <div class="icon-cards-row">
     <glide-component :settings="glideIconsOption">
-      <icon-card :title="$t('dashboards.pending-orders')" icon="iconsminds-clock" :value="14" />
       <icon-card
-        :title="$t('dashboards.completed-orders')"
-        icon="iconsminds-basket-coins"
-        :value="32"
+        :title="$t('dashboards.courses-taken')"
+        icon="iconsminds-book"
+        :value="10"
       />
       <icon-card
-        :title="$t('dashboards.refund-requests')"
+        :title="$t('dashboards.courses-pending')"
+        icon="iconsminds-bell"
+        :value="6"
+      />
+      <icon-card
+        :title="$t('dashboards.courses-progress')"
         icon="iconsminds-arrow-refresh"
-        :value="74"
+        :value="4"
       />
-      <icon-card :title="$t('dashboards.new-comments')" icon="iconsminds-mail-read" :value="25" />
     </glide-component>
   </div>
 </template>
@@ -23,7 +26,7 @@ import IconCard from "../../components/Cards/IconCard";
 export default {
   components: {
     "glide-component": GlideComponent,
-    "icon-card": IconCard
+    "icon-card": IconCard,
   },
   data() {
     return {
@@ -33,21 +36,21 @@ export default {
         type: "carousel",
         breakpoints: {
           320: {
-            perView: 1
+            perView: 1,
           },
           576: {
-            perView: 2
+            perView: 2,
           },
           1600: {
-            perView: 3
+            perView: 3,
           },
           1800: {
-            perView: 4
-          }
+            perView: 4,
+          },
         },
-        hideNav: true
-      }
+        hideNav: true,
+      },
     };
-  }
+  },
 };
 </script>
